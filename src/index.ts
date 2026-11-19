@@ -52,6 +52,13 @@ function createServer() {
     content: [{ type: "text", text: JSON.stringify(await api("/v1/info"), null, 2) }]
   }));
 
+  server.tool("g0dm0d3_tier", "Consulta o tier e os limites da chave atual.", {}, async () => ({
+    content: [{
+      type: "text",
+      text: JSON.stringify(await api("/v1/tier"), null, 2)
+    }]
+  }));
+
   server.tool("g0dm0d3_models", "Lista os modelos disponíveis na API G0DM0D3.", {}, async () => ({
     content: [{ type: "text", text: JSON.stringify(await api("/v1/models"), null, 2) }]
   }));
